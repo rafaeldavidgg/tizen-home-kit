@@ -1,5 +1,7 @@
 # Privacy — never publish these
 
+**English** | [Español](PRIVACY.es.md)
+
 This repo is designed to be public-safe, but the TV world is full of device-bound
 secrets. Keep this list next to you.
 

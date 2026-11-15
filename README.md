@@ -1,5 +1,7 @@
 # tizen-home-kit — v1 for Samsung UE43TU7125KXXC (2020, Tizen 5.5)
 
+**English** | [Español](README.es.md)
+
 Personal toolkit to de-track, remote-control and re-skin a Samsung 7 Series TU7125 over Wi-Fi.
 No root, no ADB, no launcher takeover (Tizen does not allow it). Three depth levels.
 

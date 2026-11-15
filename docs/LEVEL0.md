@@ -1,5 +1,7 @@
 # Level 0 — Remote hygiene (Samsung 2020, e.g. TU7125)
 
+**English** | [Español](LEVEL0.es.md)
+
 About 10 minutes, remote control only. Nothing installed, everything reversible.
 Do this first on any Samsung before any WiFi or app work.
 

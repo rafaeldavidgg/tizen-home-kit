@@ -1,5 +1,7 @@
 # patches/
 
+**English** | [Español](README.es.md)
+
 Diffs of our v1 Home changes against the pinned upstream commit, so this repo
 stays free of vendored upstream code.
 

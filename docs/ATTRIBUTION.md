@@ -1,5 +1,7 @@
 # Attribution
 
+**English** | [Español](ATTRIBUTION.es.md)
+
 ## Upstream Home base
 
 - https://github.com/GuillemCortesOvide/hack-tv — MIT License.

@@ -1,5 +1,7 @@
 # Reproduce Home v1 (TU7125 / Tizen 5.5)
 
+**English** | [Español](REPRODUCE-HOME.es.md)
+
 Recreates the exact v1 Home: dock of 5 + sports tray of 2, rest hidden, tightened
 header, fixed second-row scroll, square icon, real DAZN / Orange tiles.
 Upstream code is **not** copied here — you clone it pinned and apply our patch.

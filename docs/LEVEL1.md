@@ -1,5 +1,7 @@
 # Level 1 — WiFi control (8001/8002 websocket)
 
+**English** | [Español](LEVEL1.es.md)
+
 Official local remote-control channel. Read-only first, keys only when you say so.
 Your computer and the TV must share the same subnet.
 
