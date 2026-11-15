@@ -12,7 +12,7 @@ DEFAULT_TOKEN_FILE = os.path.join(os.path.dirname(__file__), "..", ".tv-token.tx
 
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description="Samsung Tizen WiFi remote (safe defaults)")
-    ap.add_argument("--host", required=True, help="TV IP, e.g. 192.168.1.22")
+    ap.add_argument("--host", required=True, help="TV IP, e.g. 192.168.1.50")
     ap.add_argument("--port", type=int, default=8002, help="8002 (wss, modern) or 8001 (ws)")
     ap.add_argument("--token-file", default=os.path.abspath(DEFAULT_TOKEN_FILE))
     ap.add_argument("--key", default=None, help="remote key to send, e.g. KEY_MENU, KEY_HOME, KEY_UP")

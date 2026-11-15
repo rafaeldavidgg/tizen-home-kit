@@ -40,7 +40,7 @@ def fetch(host: str, timeout: int = 8) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Samsung Tizen read-only info probe")
-    ap.add_argument("--host", required=True, help="TV IP, e.g. 192.168.1.22")
+    ap.add_argument("--host", required=True, help="TV IP, e.g. 192.168.1.50")
     ap.add_argument("--raw", action="store_true", help="print raw JSON (contains private IDs, do not publish)")
     args = ap.parse_args()
     try:
