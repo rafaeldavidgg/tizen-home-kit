@@ -1,7 +1,9 @@
-"""WiFi remote for Samsung Tizen (8001/8002 websocket).
+"""WiFi remote for Samsung Tizen (8001/8002).
 
-Read-only by default. Sending a key requires explicit --key and an
-on-TV Allow prompt on first connect (token is cached locally, never committed).
+Read-only by default. Sending a key uses websocket (8002 + token, Allow once).
+Launching an app uses REST POST /api/v2/applications/<id> (http 8001, no token
+needed, works for dev-mode sideloaded apps like HkTvHome01.Home where
+websocket DEEP_LINK/NATIVE_LAUNCH is ignored).
 """
 import argparse
 import os
@@ -13,10 +15,10 @@ DEFAULT_TOKEN_FILE = os.path.join(os.path.dirname(__file__), "..", ".tv-token.tx
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description="Samsung Tizen WiFi remote (safe defaults)")
     ap.add_argument("--host", required=True, help="TV IP, e.g. 192.168.1.50")
-    ap.add_argument("--port", type=int, default=8002, help="8002 (wss, modern) or 8001 (ws)")
+    ap.add_argument("--port", type=int, default=8002, help="websocket port for --key: 8002 (wss) or 8001 (ws); for --app REST same port is reused (8001 http avoids cert warning)")
     ap.add_argument("--token-file", default=os.path.abspath(DEFAULT_TOKEN_FILE))
     ap.add_argument("--key", default=None, help="remote key to send, e.g. KEY_MENU, KEY_HOME, KEY_UP")
-    ap.add_argument("--app", default=None, help="app id to launch, e.g. 3201606009684 (Spotify)")
+    ap.add_argument("--app", default=None, help="app id to launch via REST, e.g. HkTvHome01.Home (dev-mode) or 3201606009684 (store)")
     ap.add_argument("--dry-run", action="store_true", help="print what would be sent, do not connect")
     return ap
 
@@ -39,8 +41,8 @@ def main() -> int:
         print(f"Sending key {args.key} to {args.host}:{args.port} (confirm Allow on TV if first time)")
         tv.send_key(args.key)
     if args.app:
-        print(f"Launching app {args.app}")
-        tv.run_app(args.app)
+        print(f"Launching app {args.app} via REST (works for dev-mode sideloaded apps)")
+        print(tv.rest_app_run(args.app))
     print(f"Token cached at {args.token_file} — keep private, never commit.")
     return 0
 
