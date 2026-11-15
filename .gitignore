@@ -1,0 +1,17 @@
+# Python, tokens, certs, OS junk — never publish DUID / MAC / tokens
+__pycache__/
+*.pyc
+.venv/
+venv/
+.tv-token*
+*.token
+*.txt
+!requirements*.txt
+tizen/
+*.wgt
+*.tpk
+author.p12
+distributor.p12
+*.jks
+odd/
+.git/
